@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  db:
+    image: "postgres:14.1"
+    container_name: "scheduler_development"
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+    ports:
+      - "5432:5432"
+    volumes:
+      - scheduler_development:/var/lib/postgresql/data
+volumes:
+  scheduler_development:
